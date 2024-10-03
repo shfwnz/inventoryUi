@@ -554,6 +554,14 @@ video {
   display: none;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -587,16 +595,12 @@ video {
   display: flex;
 }
 
-.h-full {
-  height: 100%;
+.h-auto {
+  height: auto;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .w-full {
@@ -623,16 +627,16 @@ video {
   justify-content: space-between;
 }
 
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .rounded-lg {
@@ -641,6 +645,10 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b {
@@ -662,25 +670,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-yellow-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
-}
-
 .bg-login-pg {
   background-image: url('/dist/img/login-bg.jpeg');
 }
 
 .bg-cover {
   background-size: cover;
-}
-
-.bg-auto {
-  background-size: auto;
-}
-
-.bg-contain {
-  background-size: contain;
 }
 
 .bg-no-repeat {
@@ -758,14 +753,12 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.placeholder-gray-400::-moz-placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+.placeholder-transparent::-moz-placeholder {
+  color: transparent;
 }
 
-.placeholder-gray-400::placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-placeholder-opacity));
+.placeholder-transparent::placeholder {
+  color: transparent;
 }
 
 .shadow-lg {
@@ -778,6 +771,72 @@ video {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* input.css */
+
+/* Kelas untuk input yang aktif */
+
+.input-field {
+  position: relative;
+  margin-top: 20px;
+  /* Ruang di atas input untuk animasi */
+}
+
+/* Kelas untuk animasi label */
+
+.label-placeholder {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 16px;
+  color: gray;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  /* Mencegah interaksi dengan label */
+}
+
+/* Kelas untuk label aktif */
+
+.input-field input:not(:-moz-placeholder-shown) + .label-placeholder {
+  top: -10px;
+  left: 8px;
+  font-size: 12px;
+  color: indigo;
+  /* Warna saat label aktif */
+}
+
+.input-field input:focus + .label-placeholder,
+.input-field input:not(:placeholder-shown) + .label-placeholder {
+  top: -10px;
+  left: 8px;
+  font-size: 12px;
+  color: indigo;
+  /* Warna saat label aktif */
+}
+
+/* Menyembunyikan placeholder asli */
+
+.placeholder-transparent::-moz-placeholder {
+  color: transparent;
+  /* Placeholder tidak terlihat */
+}
+
+.placeholder-transparent::placeholder {
+  color: transparent;
+  /* Placeholder tidak terlihat */
 }
 
 .hover\:bg-indigo-700:hover {
@@ -845,10 +904,6 @@ video {
 
   .lg\:justify-end {
     justify-content: flex-end;
-  }
-
-  .lg\:bg-contain {
-    background-size: contain;
   }
 
   .lg\:bg-cover {

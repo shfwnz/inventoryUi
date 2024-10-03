@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <!-- Pastikan path ke file CSS benar -->
   </head>
@@ -14,37 +14,50 @@
       class="bg-white p-8 rounded-lg shadow-lg w-full h-auto lg:h-full max-w-md"
     >
       <div class="my-6">
-        <h2 class="text-4xl font-bold text-center mb-2">Welcome Back!</h2>
-        <p class="text-gray-600 text-center">Please enter your details.</p>
+        <h2 class="text-4xl font-bold text-center mb-2">Create an account</h2>
+        <p class="text-gray-600 text-center">
+          Please fill in the details to sign up
+        </p>
       </div>
 
       <form action="#" method="POST" class="space-y-6">
         <!-- Username Field -->
-        <div>
-          <label for="username" class="block text-sm font-medium text-gray-700"
-            >Username</label
-          >
+        <div class="input-field">
           <input
             type="text"
             id="username"
             name="username"
             required
-            class="mt-1 block w-full px-2 py-2 border-b border-gray-800 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-gray-600 sm:text-sm"
+            class="mt-1 block w-full px-2 py-2 border-b border-gray-800 shadow-sm placeholder-transparent focus:outline-none focus:ring-indigo-500 focus:border-gray-600 sm:text-sm"
+            placeholder=" "
           />
+          <label class="label-placeholder">Username</label>
         </div>
 
         <!-- Password Field -->
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700"
-            >Password</label
-          >
+        <div class="input-field">
           <input
             type="password"
             id="password"
             name="password"
             required
-            class="mt-1 block w-full px-2 py-2 border-b border-gray-800 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-gray-600 sm:text-sm"
+            class="mt-1 block w-full px-2 py-2 border-b border-gray-800 shadow-sm placeholder-transparent focus:outline-none focus:ring-indigo-500 focus:border-gray-600 sm:text-sm"
+            placeholder=" "
           />
+          <label class="label-placeholder">Password</label>
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="input-field">
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+            class="mt-1 block w-full px-2 py-2 border-b border-gray-800 shadow-sm placeholder-transparent focus:outline-none focus:ring-indigo-500 focus:border-gray-600 sm:text-sm"
+            placeholder=" "
+          />
+          <label class="label-placeholder">Confirm Password</label>
         </div>
 
         <div
@@ -53,11 +66,11 @@
           <!-- Remember Me Checkbox -->
           <label class="flex items-center">
             <input class="form-checkbox text-blue-600" type="checkbox" />
-            <span class="ml-2 text-gray-700"> Remember me </span>
+            <span class="ml-2 text-gray-700">
+              I agree to the
+              <a class="text-blue-600" href="#">Terms and Conditions</a></span
+            >
           </label>
-
-          <!-- Forgot Password Link -->
-          <a class="text-gray-500 md:ml-4" href="#"> Forgot Password? </a>
         </div>
 
         <!-- Submit Button -->
@@ -66,7 +79,7 @@
             type="submit"
             class="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
-            Sign In
+            Sign Up
           </button>
         </div>
       </form>
@@ -74,9 +87,9 @@
       <!-- Footer -->
       <div class="mt-6 text-center">
         <p>
-          Don't have an account?
+          Already have an account?
           <a href="#" class="text-sm text-indigo-600 hover:text-indigo-500"
-            >Sing up here</a
+            >Sign in here</a
           >
         </p>
       </div>
