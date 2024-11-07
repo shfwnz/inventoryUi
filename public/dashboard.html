@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Tracking Chart</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="flex h-screen">
+    <aside class="pl-9 py-9 h-full">
+      <nav
+        class="bg-navColor w-150 h-full text-white flex flex-col items-center rounded-xl p-[42px]"
+      >
+        <div class="pb-[116px]">text</div>
+        <ul class="space-y-6 flex-grow">
+          <li>
+            <img src="../dist/img/windows.svg" alt="" class="w-8 h-auto" />
+          </li>
+          <li>
+            <img src="../dist/img/package.svg" alt="" class="w-8 h-auto" />
+          </li>
+          <li>
+            <img src="../dist/img/category.svg" alt="" class="w-8 h-auto" />
+          </li>
+          <li>
+            <img src="../dist/img/package-in.svg" alt="" class="w-8 h-auto" />
+          </li>
+          <li>
+            <img src="../dist/img/package-send.svg" alt="" class="w-8 h-auto" />
+          </li>
+        </ul>
+        <div class="">setting</div>
+      </nav>
+    </aside>
+
+    <main class="flex-grow py-[78px] pr-[74px] flex flex-col gap-8">
+      <!-- Profile Section -->
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="inline-flex justify-end items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          id="menu-button"
+          aria-expanded="true"
+          aria-haspopup="true"
+        >
+          <span class="material-symbols-outlined">person</span>
+          Atmin
+          <span class="material-symbols-outlined">arrow_drop_down</span>
+        </button>
+      </div>
+
+      <!-- Status Section -->
+      <div class="flex gap-[54px] w-full pl-[85px]">
+        <div
+          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+        >
+          test
+        </div>
+        <div
+          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+        >
+          test
+        </div>
+        <div
+          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+        >
+          test
+        </div>
+      </div>
+
+      <!-- Chart Section -->
+      <div class="pl-[85px]">
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold">PRODUCT TRACKING</h2>
+            <div class="flex space-x-4">
+              <div class="flex items-center space-x-1">
+                <span class="w-4 h-4 bg-black inline-block rounded-full"></span>
+                <span>BARANG MASUK</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <span
+                  class="w-4 h-4 bg-gray-300 inline-block rounded-full"
+                ></span>
+                <span>BARANG KELUAR</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex-grow">
+            <canvas id="productChart" class=""></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const ctx = document.getElementById("productChart").getContext("2d");
+      const productChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "Jan 2024",
+            "Feb 2024",
+            "Mar 2024",
+            "Apr 2024",
+            "May 2024",
+            "Jun 2024",
+            "Jul 2024",
+            "Aug 2024",
+          ],
+          datasets: [
+            {
+              label: "Barang Masuk",
+              data: [17, 10, 9, 50, 30, 65, 30, 1],
+              borderColor: "black",
+              backgroundColor: "rgba(0, 0, 0, 0.1)",
+              fill: false,
+              borderWidth: 2,
+              tension: 0.4,
+            },
+            {
+              label: "Barang Keluar",
+              data: [5, 17, 12, 20, 50, 25, 40, 30],
+              borderColor: "lightgray",
+              backgroundColor: "rgba(211, 211, 211, 0.3)",
+              fill: false,
+              borderWidth: 2,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 80,
+              ticks: {
+                stepSize: 20,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
