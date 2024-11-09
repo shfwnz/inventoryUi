@@ -25,47 +25,75 @@
         </div>
         <ul class="space-y-6 flex-grow">
           <li>
-            <img
-              src="../dist/img/windows.svg"
-              alt=""
-              class="w-10 h-auto cursor-pointer hover:opacity-75 bg-[#404040] rounded-md p-1"
-            />
+            <a href="../public/dashboard.html">
+              <img
+                src="../dist/img/windows.svg"
+                alt=""
+                class="w-10 h-auto cursor-pointer hover:opacity-75 bg-[#404040] rounded-md p-1"
+              />
+            </a>
           </li>
           <li>
-            <img
-              src="../dist/img/package.svg"
-              alt=""
-              class="w-10 h-auto cursor-pointer"
-            />
+            <a href="../public/product.html">
+              <img
+                src="../dist/img/package.svg"
+                alt=""
+                class="w-10 h-auto cursor-pointer"
+              />
+            </a>
           </li>
           <li>
-            <img
-              src="../dist/img/category.svg"
-              alt=""
-              class="w-10 h-auto cursor-pointer"
-            />
+            <a href="../public/category.html">
+              <img
+                src="../dist/img/category.svg"
+                alt=""
+                class="w-10 h-auto cursor-pointer"
+              />
+            </a>
           </li>
           <li>
-            <img
-              src="../dist/img/package-in.svg"
-              alt=""
-              class="w-10 h-auto cursor-pointer"
-            />
+            <a href="../public/incoming-products.html">
+              <img
+                src="../dist/img/package-in.svg"
+                alt=""
+                class="w-10 h-auto cursor-pointer"
+              />
+            </a>
           </li>
           <li>
-            <img
-              src="../dist/img/package-send.svg"
-              alt=""
-              class="w-10 h-auto cursor-pointer"
-            />
+            <a href="../public/outcoming-products.html">
+              <img
+                src="../dist/img/package-send.svg"
+                alt=""
+                class="w-10 h-auto cursor-pointer"
+              />
+            </a>
           </li>
         </ul>
-        <div class="">
+        <div id="settings-button" onclick="toggleSettingsDropdown()" class="">
           <img
             src="../dist/img/settings.svg"
             alt=""
             class="w-10 h-auto cursor-pointer"
           />
+          <div
+            id="settings-menu"
+            onclick="toggleSettingsDropdown()"
+            class="hidden absolute mt-0 w-auto border rounded-lg border-gray-300 bg-white shadow-md z-10"
+          >
+            <div
+              class="pt-1 pb-2 px-3 cursor-pointer rounded-t-lg flex items-center gap-10 justify-between hover:bg-gray-100"
+            >
+              <span class="text-sm font-semibold">View Profile</span>
+              <span class="material-symbols-outlined text-sm">person</span>
+            </div>
+            <div
+              class="pt-1 pb-2 px-3 cursor-pointer rounded-b-lg flex items-center justify-between hover:bg-gray-100"
+            >
+              <span class="text-sm font-semibold">Log Out</span>
+              <span class="material-symbols-outlined text-sm">logout</span>
+            </div>
+          </div>
         </div>
       </nav>
     </aside>
@@ -76,7 +104,8 @@
         <button
           type="button"
           class="inline-flex justify-end items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          id="menu-button"
+          id="profile-button"
+          onclick="toggleProfileDropdown()"
           aria-expanded="true"
           aria-haspopup="true"
         >
@@ -84,12 +113,30 @@
           Atmin
           <span class="material-symbols-outlined">arrow_drop_down</span>
         </button>
+        <div
+          id="profile-menu"
+          onclick="toggleProfileDropdown()"
+          class="hidden absolute mt-12 w-auto border rounded-lg border-gray-300 bg-white shadow-md z-10"
+        >
+          <div
+            class="pt-1 pb-2 px-3 cursor-pointer rounded-t-lg flex items-center gap-10 justify-between hover:bg-gray-100"
+          >
+            <span class="text-sm font-semibold">View Profile</span>
+            <span class="material-symbols-outlined text-sm">person</span>
+          </div>
+          <div
+            class="pt-1 pb-2 px-3 cursor-pointer rounded-b-lg flex items-center justify-between hover:bg-gray-100"
+          >
+            <span class="text-sm font-semibold">Log Out</span>
+            <span class="material-symbols-outlined text-sm">logout</span>
+          </div>
+        </div>
       </div>
 
       <!-- Status Section -->
       <div class="flex gap-[54px] w-full pl-[85px]">
         <div
-          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-5"
         >
           <div class="flex justify-end items-end relative -mb-4">
             <img
@@ -104,7 +151,7 @@
           <div class="text-xl uppercase text-black">Jumlah barang</div>
         </div>
         <div
-          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-5"
         >
           <div class="flex justify-end items-end relative -mb-4">
             <img
@@ -121,7 +168,7 @@
           </div>
         </div>
         <div
-          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-5"
         >
           <div class="flex justify-end items-end relative -mb-4">
             <img
@@ -164,6 +211,25 @@
       </div>
     </main>
 
+    <!-- Script Button -->
+
+    <!-- Settings Button -->
+    <script>
+      function toggleSettingsDropdown() {
+        const settingsDropdown = document.querySelector("#settings-menu");
+        settingsDropdown.classList.toggle("hidden");
+      }
+    </script>
+
+    <!-- Profile Button -->
+    <script>
+      function toggleProfileDropdown() {
+        const profileDropdown = document.querySelector("#profile-menu");
+        profileDropdown.classList.toggle("hidden");
+      }
+    </script>
+
+    <!-- Script Chart -->
     <script>
       const ctx = document.getElementById("productChart").getContext("2d");
       const productChart = new Chart(ctx, {
