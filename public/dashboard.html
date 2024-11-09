@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Tracking Chart</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../dist/output.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -14,27 +14,59 @@
   <body class="flex h-screen">
     <aside class="pl-9 py-9 h-full">
       <nav
-        class="bg-navColor w-150 h-full text-white flex flex-col items-center rounded-xl p-[42px]"
+        class="bg-navColor w-150 h-full text-white flex flex-col items-center rounded-3xl p-[42px]"
       >
-        <div class="pb-[116px]">text</div>
+        <div class="pb-[56px]">
+          <img
+            src="../dist/img/robot.svg"
+            alt=""
+            class="w-12 h-auto cursor-pointer"
+          />
+        </div>
         <ul class="space-y-6 flex-grow">
           <li>
-            <img src="../dist/img/windows.svg" alt="" class="w-8 h-auto" />
+            <img
+              src="../dist/img/windows.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer hover:opacity-75 bg-[#404040] rounded-md p-1"
+            />
           </li>
           <li>
-            <img src="../dist/img/package.svg" alt="" class="w-8 h-auto" />
+            <img
+              src="../dist/img/package.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
           </li>
           <li>
-            <img src="../dist/img/category.svg" alt="" class="w-8 h-auto" />
+            <img
+              src="../dist/img/category.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
           </li>
           <li>
-            <img src="../dist/img/package-in.svg" alt="" class="w-8 h-auto" />
+            <img
+              src="../dist/img/package-in.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
           </li>
           <li>
-            <img src="../dist/img/package-send.svg" alt="" class="w-8 h-auto" />
+            <img
+              src="../dist/img/package-send.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
           </li>
         </ul>
-        <div class="">setting</div>
+        <div class="">
+          <img
+            src="../dist/img/settings.svg"
+            alt=""
+            class="w-10 h-auto cursor-pointer"
+          />
+        </div>
       </nav>
     </aside>
 
@@ -57,19 +89,53 @@
       <!-- Status Section -->
       <div class="flex gap-[54px] w-full pl-[85px]">
         <div
-          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
         >
-          test
+          <div class="flex justify-end items-end relative -mb-4">
+            <img
+              src="../dist/img/open-now.svg"
+              alt=""
+              class="w-14 h-auto cursor-pointer"
+            />
+          </div>
+
+          <!-- Information -->
+          <div class="text-2xl uppercase text-black">96</div>
+          <div class="text-xl uppercase text-black">Jumlah barang</div>
         </div>
         <div
-          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
         >
-          test
+          <div class="flex justify-end items-end relative -mb-4">
+            <img
+              src="../dist/img/open-now.svg"
+              alt=""
+              class="w-14 h-auto cursor-pointer"
+            />
+          </div>
+
+          <!-- Information -->
+          <div class="text-2xl uppercase text-black">5</div>
+          <div class="text-xl uppercase text-black">
+            Barang Masuk <span class="text-lg block -mt-2">DD/MM/YY</span>
+          </div>
         </div>
         <div
-          class="bg-default w-full text-black text-center py-2 rounded-[30px] h-[150px]"
+          class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-3"
         >
-          test
+          <div class="flex justify-end items-end relative -mb-4">
+            <img
+              src="../dist/img/open-now.svg"
+              alt=""
+              class="w-14 h-auto cursor-pointer"
+            />
+          </div>
+
+          <!-- Information -->
+          <div class="text-2xl uppercase text-black">6</div>
+          <div class="text-xl uppercase text-black">
+            Barang Keluar <span class="text-lg block -mt-2">DD/MM/YY</span>
+          </div>
         </div>
       </div>
 

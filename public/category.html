@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex h-screen">
+    <aside class="pl-9 py-9 h-full">
+      <nav
+        class="bg-navColor w-150 h-full text-white flex flex-col items-center rounded-3xl p-[42px]"
+      >
+        <div class="pb-[56px]">
+          <img
+            src="../dist/img/robot.svg"
+            alt=""
+            class="w-12 h-auto cursor-pointer"
+          />
+        </div>
+        <ul class="space-y-6 flex-grow">
+          <li>
+            <img
+              src="../dist/img/windows.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
+          </li>
+          <li>
+            <img
+              src="../dist/img/package.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer hover:opacity-75 bg-[#404040] rounded-md p-1"
+            />
+          </li>
+          <li>
+            <img
+              src="../dist/img/category.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
+          </li>
+          <li>
+            <img
+              src="../dist/img/package-in.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
+          </li>
+          <li>
+            <img
+              src="../dist/img/package-send.svg"
+              alt=""
+              class="w-10 h-auto cursor-pointer"
+            />
+          </li>
+        </ul>
+        <div class="">
+          <img
+            src="../dist/img/settings.svg"
+            alt=""
+            class="w-10 h-auto cursor-pointer"
+          />
+        </div>
+      </nav>
+    </aside>
+
+    <main class="flex-grow py-[78px] pr-[74px] flex flex-col gap-8">
+      <!-- Profile Section -->
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="inline-flex justify-end items-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          id="menu-button"
+          aria-expanded="true"
+          aria-haspopup="true"
+        >
+          <span class="material-symbols-outlined">person</span>
+          Atmin
+          <span class="material-symbols-outlined">arrow_drop_down</span>
+        </button>
+      </div>
+
+      <!-- Search Section -->
+      <div class="flex gap-[54px] w-full pl-[85px]">
+        <div class="relative w-full">
+          <input
+            type="text"
+            placeholder="Cari Barang..."
+            class="w-full py-2 pl-10 pr-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          />
+          <img
+            src="../dist/img/magnifying-glass.svg"
+            alt="Search"
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+          />
+        </div>
+      </div>
+
+      <!-- Chart Section -->
+      <div class="pl-[85px]">
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+          <div class="flex items-center justify-between mb-4">
+            <button class="bg-gray-200 px-4 py-2 rounded-md">
+              Tabel Barang
+            </button>
+            <button class="bg-gray-200 px-4 py-2 rounded-md">
+              Tambah Barang
+            </button>
+          </div>
+
+          <!-- Table -->
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-300">
+              <thead>
+                <tr class="border-b">
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    ID
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Nama Barang
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Merk
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Seri
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Spesifikasi
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Stok
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Kategori
+                  </th>
+                  <th class="px-4 py-2 text-left text-gray-600 font-semibold">
+                    Aksi
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Contoh data pada tabel -->
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">Nama Barang 1</td>
+                  <td class="px-4 py-2">Merk 1</td>
+                  <td class="px-4 py-2">Seri 1</td>
+                  <td class="px-4 py-2">Spesifikasi 1</td>
+                  <td class="px-4 py-2">100</td>
+                  <td class="px-4 py-2">Kategori 1</td>
+                  <td class="px-4 py-2">
+                    <button class="text-gray-600 hover:text-black">•••</button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">Nama Barang 1</td>
+                  <td class="px-4 py-2">Merk 1</td>
+                  <td class="px-4 py-2">Seri 1</td>
+                  <td class="px-4 py-2">Spesifikasi 1</td>
+                  <td class="px-4 py-2">100</td>
+                  <td class="px-4 py-2">Kategori 1</td>
+                  <td class="px-4 py-2">
+                    <button class="text-gray-600 hover:text-black">•••</button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">Nama Barang 1</td>
+                  <td class="px-4 py-2">Merk 1</td>
+                  <td class="px-4 py-2">Seri 1</td>
+                  <td class="px-4 py-2">Spesifikasi 1</td>
+                  <td class="px-4 py-2">100</td>
+                  <td class="px-4 py-2">Kategori 1</td>
+                  <td class="px-4 py-2">
+                    <button class="text-gray-600 hover:text-black">•••</button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">Nama Barang 1</td>
+                  <td class="px-4 py-2">Merk 1</td>
+                  <td class="px-4 py-2">Seri 1</td>
+                  <td class="px-4 py-2">Spesifikasi 1</td>
+                  <td class="px-4 py-2">100</td>
+                  <td class="px-4 py-2">Kategori 1</td>
+                  <td class="px-4 py-2">
+                    <button class="text-gray-600 hover:text-black">•••</button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="px-4 py-2">1</td>
+                  <td class="px-4 py-2">Nama Barang 1</td>
+                  <td class="px-4 py-2">Merk 1</td>
+                  <td class="px-4 py-2">Seri 1</td>
+                  <td class="px-4 py-2">Spesifikasi 1</td>
+                  <td class="px-4 py-2">100</td>
+                  <td class="px-4 py-2">Kategori 1</td>
+                  <td class="px-4 py-2">
+                    <button class="text-gray-600 hover:text-black">•••</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex justify-start mt-4 space-x-2">
+            <button class="px-3 py-1 text-white bg-navColor rounded">1</button>
+            <button class="px-3 py-1 bg-gray-200 rounded">2</button>
+            <button class="px-3 py-1 bg-gray-200 rounded">...</button>
+            <button class="px-3 py-1 bg-gray-200 rounded">10</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
