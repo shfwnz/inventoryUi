@@ -152,12 +152,95 @@
       <div class="pl-[85px]">
         <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
           <div class="flex items-center justify-between mb-4">
-            <button class="bg-gray-200 px-4 py-2 rounded-md">
+            <div class="bg-gray-200 px-4 py-2 rounded-md cursor-default">
               Tabel Kategori
-            </button>
-            <button class="bg-gray-200 px-4 py-2 rounded-md">
-              Tambah Kategori
-            </button>
+            </div>
+            <div class="cursor-pointer">
+              <button
+                class="bg-button px-4 py-2 rounded-md"
+                onclick="showAddDialog()"
+              >
+                Tambah Kategori
+              </button>
+
+              <!-- Edit Dialog Section -->
+              <div
+                id="addDialog"
+                class="fixed left-0 px-0 top-0 bg-black bg-opacity-50 hidden w-full h-full justify-center items-center transition-opacity duration-500"
+                onclick="hideAddDialog()"
+              >
+                <div
+                  class="bg-white rounded shadow-md p-8 mx-auto w-full max-w-lg relative"
+                  onclick="event.stopPropagation()"
+                >
+                  <div class="flex items-center justify-between">
+                    <h1 class="font-bold text-lg mb-4">Tambah Kategori</h1>
+                    <button class="text-black" onclick="hideAddDialog()">
+                      <span class="material-symbols-outlined">close</span>
+                    </button>
+                  </div>
+                  <!-- Content for edit dialog -->
+                  <div class="flex">
+                    <table
+                      class="w-full text-left border-separate border-spacing-y-2"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="font-semibold">Deskripsi</td>
+                          <td>
+                            <form>
+                              <input
+                                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="itemName"
+                                type="text"
+                                placeholder="Masukkan Deskripsi"
+                              />
+                            </form>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="font-semibold">Kategori</td>
+                          <td>
+                            <form>
+                              <input
+                                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="itemName"
+                                type="text"
+                                placeholder="Masukkan Kategori"
+                              />
+                            </form>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="font-semibold">Keterangan</td>
+                          <td>
+                            <form>
+                              <input
+                                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="itemName"
+                                type="text"
+                                placeholder="Masukkan Keterangan"
+                              />
+                            </form>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Add more form fields as needed -->
+                  <div class="flex justify-end">
+                    <button
+                      type="button"
+                      class="bg-blue-500 text-white px-4 py-2 rounded"
+                      onclick="hideAddDialog()"
+                    >
+                      Simpan
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Table -->
@@ -190,43 +273,176 @@
                   <td class="px-4 py-2">Kategori 1</td>
                   <td class="px-4 py-2">Keterangan 1</td>
                   <td class="px-4 py-2">
-                    <button class="text-gray-600 hover:text-black">•••</button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Deskripsi 1</td>
-                  <td class="px-4 py-2">Kategori 1</td>
-                  <td class="px-4 py-2">Keterangan 1</td>
-                  <td class="px-4 py-2">
-                    <button class="text-gray-600 hover:text-black">•••</button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Deskripsi 1</td>
-                  <td class="px-4 py-2">Kategori 1</td>
-                  <td class="px-4 py-2">Keterangan 1</td>
-                  <td class="px-4 py-2">
-                    <button class="text-gray-600 hover:text-black">•••</button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Deskripsi 1</td>
-                  <td class="px-4 py-2">Kategori 1</td>
-                  <td class="px-4 py-2">Keterangan 1</td>
-                  <td class="px-4 py-2">
-                    <button class="text-gray-600 hover:text-black">•••</button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-4 py-2">1</td>
-                  <td class="px-4 py-2">Deskripsi 1</td>
-                  <td class="px-4 py-2">Kategori 1</td>
-                  <td class="px-4 py-2">Keterangan 1</td>
-                  <td class="px-4 py-2">
-                    <button class="text-gray-600 hover:text-black">•••</button>
+                    <button
+                      class="text-gray-600 hover:text-black"
+                      id="action-button"
+                      onclick="showDialog()"
+                    >
+                      •••
+                    </button>
+
+                    <!-- PopUp Section -->
+                    <div
+                      id="dialog"
+                      class="fixed left-0 px-0 top-0 bg-black bg-opacity-50 backdrop-blur-sm hidden w-full h-full justify-center items-center transition-opacity duration-500"
+                      onclick="hideDialog()"
+                    >
+                      <div
+                        class="bg-white rounded shadow-md p-8 mx-auto w-full max-w-lg relative"
+                        onclick="event.stopPropagation()"
+                      >
+                        <div class="flex items-center justify-between">
+                          <h1 class="font-bold text-lg mb-4">Data Table</h1>
+                          <button class="text-black" onclick="hideDialog()">
+                            <span class="material-symbols-outlined">
+                              close
+                            </span>
+                          </button>
+                        </div>
+
+                        <div class="flex">
+                          <table
+                            class="w-full text-left border-separate border-spacing-y-2"
+                          >
+                            <tbody>
+                              <tr>
+                                <td class="font-semibold">id</td>
+                                <td>Lorem ipsum</td>
+                              </tr>
+                              <tr>
+                                <td class="font-semibold">deskripsi</td>
+                                <td>Lorem ipsum</td>
+                              </tr>
+                              <tr>
+                                <td class="font-semibold">kategori</td>
+                                <td>Lorem ipsum</td>
+                              </tr>
+                              <tr>
+                                <td class="font-semibold">keterangan</td>
+                                <td>Lorem ipsum</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="flex justify-start gap-4 mt-5">
+                          <div>
+                            <button
+                              class="hover:bg-navColor p-1 rounded-lg border-2"
+                              onclick="hideDialog()"
+                            >
+                              <img
+                                class="w-9 h-auto cursor-pointer"
+                                src="../dist/img/trash.svg"
+                                alt="trash"
+                                onmouseover="this.src='../dist/img/trash-hover.svg'"
+                                onmouseout="this.src='../dist/img/trash.svg'"
+                              />
+                            </button>
+                          </div>
+                          <div>
+                            <button
+                              class="hover:bg-navColor p-1 rounded-lg border-2"
+                              onclick="showEditDialog()"
+                            >
+                              <img
+                                class="w-9 h-auto cursor-pointer"
+                                src="../dist/img/pencil.svg"
+                                alt="pencil"
+                                onmouseover="this.src='../dist/img/pencil-hover.svg'"
+                                onmouseout="this.src='../dist/img/pencil.svg'"
+                              />
+                            </button>
+
+                            <!-- Edit Dialog Section -->
+                            <div
+                              id="editDialog"
+                              class="fixed left-0 px-0 top-0 bg-black bg-opacity-50 hidden w-full h-full justify-center items-center transition-opacity duration-500"
+                              onclick="hideEditDialog()"
+                            >
+                              <div
+                                class="bg-white rounded shadow-md p-8 mx-auto w-full max-w-lg relative"
+                                onclick="event.stopPropagation()"
+                              >
+                                <div class="flex items-center justify-between">
+                                  <h1 class="font-bold text-lg mb-4">
+                                    Edit Data
+                                  </h1>
+                                  <button
+                                    class="text-black"
+                                    onclick="hideEditDialog()"
+                                  >
+                                    <span class="material-symbols-outlined"
+                                      >close</span
+                                    >
+                                  </button>
+                                </div>
+                                <!-- Content for edit dialog -->
+                                <div class="flex">
+                                  <table
+                                    class="w-full text-left border-separate border-spacing-y-2"
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td class="font-semibold">Deskripsi</td>
+                                        <td>
+                                          <form>
+                                            <input
+                                              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                              id="itemName"
+                                              type="text"
+                                              placeholder="Masukkan Deskripsi"
+                                            />
+                                          </form>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="font-semibold">Kategori</td>
+                                        <td>
+                                          <form>
+                                            <input
+                                              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                              id="itemName"
+                                              type="text"
+                                              placeholder="Masukkan Kategori"
+                                            />
+                                          </form>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="font-semibold">
+                                          Keterangan
+                                        </td>
+                                        <td>
+                                          <form>
+                                            <input
+                                              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                              id="itemName"
+                                              type="text"
+                                              placeholder="Masukkan Keterangan"
+                                            />
+                                          </form>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+
+                                <!-- Add more form fields as needed -->
+                                <div class="flex justify-end">
+                                  <button
+                                    type="button"
+                                    class="bg-blue-500 text-white px-4 py-2 rounded"
+                                    onclick="hideEditDialog()"
+                                  >
+                                    Simpan
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -244,22 +460,6 @@
       </div>
     </main>
 
-    <!-- Script Button -->
-
-    <!-- Settings Button -->
-    <script>
-      function toggleSettingsDropdown() {
-        const settingsDropdown = document.querySelector("#settings-menu");
-        settingsDropdown.classList.toggle("hidden");
-      }
-    </script>
-
-    <!-- Profile Button -->
-    <script>
-      function toggleProfileDropdown() {
-        const profileDropdown = document.querySelector("#profile-menu");
-        profileDropdown.classList.toggle("hidden");
-      }
-    </script>
+    <script src="../dist/js/script.js"></script>
   </body>
 </html>

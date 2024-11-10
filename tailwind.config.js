@@ -9,6 +9,7 @@ module.exports = {
       backgroundColor: {
         default: "#D9D9D9",
         navColor: "#2A2828",
+        button: "#CBD2A4",
       },
       backgroundImage: {
         "login-pg": "url('/dist/img/login-bg.jpeg')",
