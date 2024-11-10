@@ -20,7 +20,7 @@
           <img
             src="../dist/img/robot.svg"
             alt=""
-            class="w-12 h-auto cursor-pointer"
+            class="w-12 h-auto cursor-default"
           />
         </div>
         <ul class="space-y-6 flex-grow">
@@ -217,24 +217,6 @@
       </div>
     </main>
 
-    <!-- Script Button -->
-
-    <!-- Settings Button -->
-    <script>
-      function toggleSettingsDropdown() {
-        const settingsDropdown = document.querySelector("#settings-menu");
-        settingsDropdown.classList.toggle("hidden");
-      }
-    </script>
-
-    <!-- Profile Button -->
-    <script>
-      function toggleProfileDropdown() {
-        const profileDropdown = document.querySelector("#profile-menu");
-        profileDropdown.classList.toggle("hidden");
-      }
-    </script>
-
     <!-- Script Chart -->
     <script>
       const ctx = document.getElementById("productChart").getContext("2d");
@@ -292,5 +274,7 @@
         },
       });
     </script>
+
+    <script src="../dist/js/script.js"></script>
   </body>
 </html>
