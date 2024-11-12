@@ -11,66 +11,98 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body class="flex h-screen">
-    <aside class="pl-9 py-9 h-full">
+  <body class="lg:flex h-screen">
+    <aside
+      class="px-9 lg:pr-0 py-9 h-full z-10 lg:static fixed lg:z-auto"
+      id="navSettings"
+    >
       <nav
-        class="bg-navColor w-150 h-full text-white flex flex-col items-center rounded-3xl p-[42px]"
+        onclick="navSettings()"
+        class="bg-navColor opacity-75 lg:opacity-100 w-auto lg:w-150 h-auto lg:h-full text-white flex flex-col items-center rounded-3xl p-8 lg:p-[42px]"
       >
-        <div class="pb-[56px]">
+        <div class="lg:pb-[56px]" id="nav-icon">
           <img
             src="../dist/img/robot.svg"
             alt=""
-            class="w-12 h-auto cursor-default"
+            class="w-9 lg:w-12 h-auto cursor-default"
+            id="nav-img"
           />
         </div>
-        <ul class="space-y-6 flex-grow">
+        <ul
+          class="space-y-6 flex-grow hidden lg:flex-col lg:flex"
+          id="nav-menu"
+        >
           <li>
-            <a href="../public/index.html">
+            <a
+              href="../public/index.html"
+              class="flex items-center gap-2 lg:gap-0"
+            >
               <img
                 src="../dist/img/windows.svg"
                 alt=""
                 class="w-10 h-auto cursor-pointer hover:opacity-75 bg-[#404040] rounded-md p-1"
               />
+              <span class="lg:hidden capitalize">Dashboard</span>
             </a>
           </li>
           <li>
-            <a href="../public/product.html">
+            <a
+              href="../public/product.html"
+              class="flex items-center gap-2 lg:gap-0"
+            >
               <img
                 src="../dist/img/package.svg"
                 alt=""
                 class="w-10 h-auto cursor-pointer"
               />
+              <span class="lg:hidden capitalize">Barang</span>
             </a>
           </li>
           <li>
-            <a href="../public/category.html">
+            <a
+              href="../public/category.html"
+              class="flex items-center gap-2 lg:gap-0"
+            >
               <img
                 src="../dist/img/category.svg"
                 alt=""
                 class="w-10 h-auto cursor-pointer"
               />
+              <span class="lg:hidden capitalize">Kategori</span>
             </a>
           </li>
           <li>
-            <a href="../public/incoming-products.html">
+            <a
+              href="../public/incoming-products.html"
+              class="flex items-center gap-2 lg:gap-0"
+            >
               <img
                 src="../dist/img/package-in.svg"
                 alt=""
                 class="w-10 h-auto cursor-pointer"
               />
+              <span class="lg:hidden capitalize">Barang Masuk</span>
             </a>
           </li>
           <li>
-            <a href="../public/outcoming-products.html">
+            <a
+              href="../public/outcoming-products.html"
+              class="flex items-center gap-2 lg:gap-0"
+            >
               <img
                 src="../dist/img/package-send.svg"
                 alt=""
                 class="w-10 h-auto cursor-pointer"
               />
+              <span class="lg:hidden capitalize">Barang Keluar</span>
             </a>
           </li>
         </ul>
-        <div id="settings-button" onclick="toggleSettingsDropdown()" class="">
+        <div
+          id="settings-button"
+          onclick="toggleSettingsDropdown()"
+          class="hidden lg:flex-col lg:flex"
+        >
           <img
             src="../dist/img/settings.svg"
             alt=""
@@ -98,7 +130,9 @@
       </nav>
     </aside>
 
-    <main class="flex-grow py-[78px] pr-[74px] flex flex-col gap-8">
+    <main
+      class="lg:flex-grow py-[78px] lg:pr-[74px] pl-0 pr-8 flex flex-col gap-8"
+    >
       <!-- Profile Section -->
       <div class="flex justify-end">
         <button
@@ -134,7 +168,9 @@
       </div>
 
       <!-- Status Section -->
-      <div class="flex gap-[54px] w-full pl-[85px]">
+      <div
+        class="flex flex-col gap-2 lg:gap-[54px] w-full pl-[85px] lg:flex-row"
+      >
         <div
           class="bg-default w-full text-black py-3 rounded-[30px] h-[150px] flex-col px-5"
         >
@@ -195,9 +231,11 @@
       <!-- Chart Section -->
       <div class="pl-[85px]">
         <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="text-lg font-semibold">PRODUCT TRACKING</h2>
-            <div class="flex space-x-4">
+          <div
+            class="flex flex-col lg:flex-row items-center justify-between mb-4"
+          >
+            <h2 class="text-lg font-semibold mb-2 lg:mb-0">PRODUCT TRACKING</h2>
+            <div class="flex flex-col lg:flex-row lg:space-x-4">
               <div class="flex items-center space-x-1">
                 <span class="w-4 h-4 bg-black inline-block rounded-full"></span>
                 <span>BARANG MASUK</span>
