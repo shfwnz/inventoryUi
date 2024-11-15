@@ -1,3 +1,24 @@
+//Nav Element
+function handleNavClick() {
+  const nav = document.getElementById("navElement");
+
+  // Fungsi untuk memeriksa ukuran layar dan menghapus onclick di lg
+  function updateNavOnResize() {
+    if (window.innerWidth >= 1024) {
+      nav.removeAttribute("onclick");
+    } else {
+      nav.setAttribute("onclick", "navSettings()");
+    }
+  }
+
+  // Jalankan saat halaman dimuat dan ketika ukuran layar berubah
+  updateNavOnResize();
+  window.addEventListener("resize", updateNavOnResize);
+}
+
+// Panggil fungsi setelah halaman dimuat
+handleNavClick();
+
 //Nav Settings
 function navSettings() {
   let navSettings = document.getElementById("navSettings");
